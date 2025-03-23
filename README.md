@@ -4,6 +4,7 @@ Simple JS Program for extracting suggested names through a web API having root a
 
 To Run the program one simply needs to have node installed in his/her system.
 -> Just fork the repository in your local machine.
+-> Run npm int-y in the code repository
 -> Run the main "name_extractor.js" file using node (as "node name_extractor")
 
 

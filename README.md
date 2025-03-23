@@ -33,15 +33,18 @@ v3 -- suggests alphanumeric names having whitespaces and special symbols
 2. The query is accepted even if it is alphanumeric with whitespaces and special symbols in all of the versions 
 but it returns valid output only if input conforms with the return type of that version.
 
-3. The query length is across different versions which gives unique results is :
+3. The maximum query length across different versions which gives unique results is :
 \
 v1 -- 2\
 v2 -- 2\
 v3 -- 2
 
 4. The API has a rate limit hence under excessive load the api returns an HTTP 429 as reply.
+   Rate limit for v1 -- 100 Requests/min
+   Rate limit for v2 -- 50 Requests/min
+   Rate limit for v1 -- 80 Requests/min
 
-5. The number of suggested names returned by API's different versions are as follows :-
+6. The number of suggested names returned by API's different versions are as follows :-
 
 When query length is one :
 \

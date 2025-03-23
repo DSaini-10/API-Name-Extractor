@@ -10,6 +10,17 @@ To Run the program one simply needs to have node installed in his/her system.
 
 ### Logic for the Code:- 
 
+The extractAllNames() is the main function of the program which ensures to make requests both for possible single letter combinations and double letter combinations out of the 
+given query string, for which fetchNames() function is repeatedly called. This function makes asynchronous GET requests on to the specified endpoints of the given API.
+
+If a successful and desired response is received corresponding to our request then we add the suggested names to uniqueNames set(set is used in order to store only unique names).
+Otherwise if the server replies back with status 429 then it means that we have hit our rate limit and need to wait for some time before making new requests. So we use the concept of exponential backoff(although we simply use delay *2 instead of random values within a given range) before making new requests.
+
+If the request fails due to any reason then we log out the error code received in the response.
+However if we are unable to connect with the server to even make a GET request then this case is handled by the catch block.
+
+Later on while testing, I felt the need to also time the requests so there is also a timer code attached which helps to time the programs execution in order to correctly select the delay value based on some hit and trial.
+
 ### API Exploration :- 
 Through the process of extensive testing of given RESTful API. I was able to draw out the following conclusions:- 
 
